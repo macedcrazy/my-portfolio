@@ -1,7 +1,9 @@
 import { ThemeProvider } from "@emotion/react";
 import theme from "./theme";
 import { Header } from "./components/Header";
-import { BrowserRouter as Router, Routes } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Profile } from "./components/Profile";
+import { Skills } from "./components/Skills";
 
 export const App: React.FC = () => {
 
@@ -10,7 +12,9 @@ export const App: React.FC = () => {
       <Router>
         <Header />
         <div style={{ padding: '2rem' }}>
-          <Routes>            
+          <Routes>
+            <Route path="/"  element={<Profile />}  /> 
+            <Route path="/skills"  element={<Skills />}  />            
 
           </Routes>
         </div>
